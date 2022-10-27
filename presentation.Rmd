@@ -1,5 +1,5 @@
 ---
-title: "Presentation title"
+title: "GCSE English and Maths Results"
 subtitle: "Presentation subtitle (if any)"
 author: "JEJ <br> James Jiang, Edan Marlow, Junlu Zheng" 
 institute: "University of Edinburgh"
