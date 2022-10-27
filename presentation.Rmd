@@ -1,7 +1,7 @@
 ---
 title: "Presentation title"
 subtitle: "Presentation subtitle (if any)"
-author: "Team name <br> Names of team members"
+author: "Team name <br> Names of team members" 
 institute: "University of Edinburgh"
 date: "`r Sys.Date()`"
 output:
@@ -29,7 +29,9 @@ knitr::opts_chunk$set(fig.retina = 3, dpi = 300, fig.width = 6, fig.asp = 0.618,
 ```
 
 ```{r load-data, include=FALSE}
-# Load your data here
+library(readr)
+resource <- read_csv("C:/Users/JUNLUZHENG/Desktop/resource.csv")
+View(resource)
 ```
 
 ```{r include=FALSE}
