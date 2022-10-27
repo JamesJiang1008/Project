@@ -30,8 +30,8 @@ knitr::opts_chunk$set(fig.retina = 3, dpi = 300, fig.width = 6, fig.asp = 0.618,
 
 ```{r load-data, include=FALSE}
 library(readr)
-gcse_english_and_maths_local_authority_data_2019_20 <- read_csv("gcse-english-and-maths-local-authority-data-2019-20.csv")
-View(gcse_english_and_maths_local_authority_data_2019_20)
+gcse_english_and_maths_national_data_2019_20 <- read_csv("gcse-english-and-maths-national-data-2019-20.csv")
+View(gcse_english_and_maths_national_data_2019_20)
 ```
 
 ```{r include=FALSE}
