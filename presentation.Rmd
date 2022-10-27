@@ -42,7 +42,7 @@ style_xaringan(
 
 class: center, middle
 
-## A statement of the overall goal / research question
+## Examine the relationship between groups with different characteristics and GCSE English and maths scores
 
 ---
 
