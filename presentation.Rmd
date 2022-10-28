@@ -98,7 +98,9 @@ gcse2019 %>%
 # in my slides. But I need the resulting data frame for a plot I want to present.
     ggplot(gcse2019, mapping = aes(x = School_characteristic, fill = Ethnicity)) +
     geom_bar()+
-    coord_flip()
+    coord_flip()+
+theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.direction = "horizontal", legend.position = "bottom")
 
 ```
 
