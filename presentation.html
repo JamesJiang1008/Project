@@ -4,7 +4,7 @@
     <title>GCSE English and Maths Results</title>
     <meta charset="utf-8" />
     <meta name="author" content="JEJ   James Jiang, Edan Marlow, Junlu Zheng" />
-    <meta name="date" content="2022-10-27" />
+    <meta name="date" content="2022-10-28" />
     <script src="libs/header-attrs-2.16/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
@@ -15,9 +15,6 @@ class: center, middle, inverse, title-slide
 .title[
 # GCSE English and Maths Results
 ]
-.subtitle[
-## Presentation subtitle (if any)
-]
 .author[
 ### JEJ <br> James Jiang, Edan Marlow, Junlu Zheng
 ]
@@ -25,7 +22,7 @@ class: center, middle, inverse, title-slide
 ### University of Edinburgh
 ]
 .date[
-### 2022-10-27
+### 2022-10-28
 ]
 
 ---
@@ -38,62 +35,43 @@ class: center, middle, inverse, title-slide
 
 
 
-
-class: center, middle
-
-## Examine the relationship between groups with different characteristics and GCSE English and maths scores
-
----
 
 class: inverse, center, middle
 
-# Section title
+## Introduciton
 
 ---
 
-# Hello World
+# Introduction
+- Research Question - What is the correlation between different groups of people and scoring 5 or above in GCSE English and maths? 
 
-- Click the `Knit` button to compile your presentation
-
-- Make sure to commit and push all resulting files to your GitHub repo
 
 ---
 
-class: inverse, middle, center
 
-# Using xaringan
 
----
+class: inverse, center, middle
 
-# xaringan
-
-- The presentation is created using the `xaringan` package
-
-- Use `---` to separate slides and `--` for incremental builds
-
---
-
-- Like this
+# Variables 
 
 ---
 
-# Layouts
+# Variable that will use
 
-You can use plain text
+- Ethnicity
 
-- or bullet points
+- Gender
 
-.pull-left[
-or text in two columns `\(^*\)`
-]
-.pull-right[
-- like
-- this
-]
+- FSM
 
-.footnote[
-[*] And add footnotes
-]
+- SEN_type
+
+- SEN_grouping
+
+- Religious_denominated
+
+- Value
+
 
 ---
 
@@ -102,13 +80,13 @@ or text in two columns `\(^*\)`
 
 ```r
 # a boring analysis
-ave &lt;- mean(cars$dist)
-print(ave)
+gcse2019 %&gt;%
+    ggplot(mapping = aes(x = School_characteristic, fill = Ethnicity)) +
+    geom_bar()+
+    coord_flip()
 ```
 
-```
-## [1] 42.98
-```
+&lt;img src="presentation_files/figure-html/boring-analysis-1.png" width="80%" /&gt;
 
 ---
 
@@ -192,53 +170,6 @@ If you want to generate a table, make sure it is in the HTML format (instead of 
 &lt;/tbody&gt;
 &lt;/table&gt;
 
----
-
-# Images
-
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="https://images.unsplash.com/photo-1535448033526-c0e85c9e6968?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1650&amp;q=80" alt="Image credit: Photo by Jörg Angeli on Unsplash." width="60%" /&gt;
-&lt;p class="caption"&gt;Image credit: Photo by Jörg Angeli on Unsplash.&lt;/p&gt;
-&lt;/div&gt;
-
-Or you can also include a full page image. See next slide.
-
----
-
-background-image: url(https://images.unsplash.com/photo-1535448033526-c0e85c9e6968?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1650&amp;q=80)
-
----
-
-# Math Expressions
-
-You can write LaTeX math expressions inside a pair of dollar signs, e.g. &amp;#36;\alpha+\beta$ renders `\(\alpha+\beta\)`. You can use the display style with double dollar signs:
-
-```
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-```
-
-`$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$`
-
-Limitations:
-
-1. The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
-
-1. There should not be spaces after the opening `$` or before the closing `$`.
-
-1. Math does not work on the title slide (see [#61](https://github.com/yihui/xaringan/issues/61) for a workaround).
-
----
-
-# Feeling adventurous?
-
-- Want to find out more about `xaringan`? See https://slides.yihui.name/xaringan/#1.
-
-- You are welcomed to use the default styling of the slides. In fact, that's what I expect majority of you will do. You will differentiate yourself with the content of your presentation.
-
-- But some of you might want to play around with slide styling. The 
-`xaringanthemer` provides some solutions for this that: https://pkg.garrickadenbuie.com/xaringanthemer.
-
-- And if you want more bells and whistles, there is also `xaringanExtra`: https://pkg.garrickadenbuie.com/xaringanExtra.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
