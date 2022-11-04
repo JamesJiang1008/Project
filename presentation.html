@@ -4,7 +4,7 @@
     <title>GCSE English and Maths Results</title>
     <meta charset="utf-8" />
     <meta name="author" content="JEJ   James Jiang, Edan Marlow, Junlu Zheng" />
-    <meta name="date" content="2022-10-28" />
+    <meta name="date" content="2022-11-04" />
     <script src="libs/header-attrs-2.16/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
@@ -22,7 +22,7 @@ class: center, middle, inverse, title-slide
 ### University of Edinburgh
 ]
 .date[
-### 2022-10-28
+### 2022-11-04
 ]
 
 ---
@@ -80,7 +80,7 @@ class: inverse, center, middle
 
 ```r
 # a boring analysis
-gcse2019 %&gt;%
+national %&gt;%
   select(Value, Ethnicity, School_characteristic) %&gt;%
   filter(Value != "!") %&gt;%
   glimpse()
@@ -89,7 +89,7 @@ gcse2019 %&gt;%
 ```
 ## Rows: 1,293
 ## Columns: 3
-## $ Value                 &lt;chr&gt; "20.9", "57.1", "59.8", "17.8", "14.9", "54.3", …
+## $ Value                 &lt;dbl&gt; 20.9, 57.1, 59.8, 17.8, 14.9, 54.3, 12.1, 54.3, …
 ## $ Ethnicity             &lt;chr&gt; "All", "All", "All", "All", "All", "All", "All",…
 ## $ School_characteristic &lt;chr&gt; "State-funded mainstream", "State-funded mainstr…
 ```

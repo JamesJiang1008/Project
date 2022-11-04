@@ -29,8 +29,10 @@ knitr::opts_chunk$set(fig.retina = 3, dpi = 300, fig.width = 6, fig.asp = 0.618,
 
 ```{r load-data, include=FALSE}
 library(readr)
-gcse2019 <- read_csv("gcse-english-and-maths-national-data-2019-20.csv")
-View(gcse2019)
+national <- read_csv("gcse-english-and-maths-national-data-2019-20.csv", 
+    col_types = cols(Value = col_double(), 
+        Denominator = col_double(), Numerator = col_double()))
+View(national)
 ```
 
 ```{r include=FALSE}
@@ -82,7 +84,7 @@ class: inverse, center, middle
 
 ```{r boring-analysis}
 # a boring analysis
-gcse2019 %>%
+national %>%
   select(Value, Ethnicity, School_characteristic) %>%
   filter(Value != "!") %>%
   glimpse()
@@ -96,7 +98,7 @@ gcse2019 %>%
 ```{r recode-species, echo = FALSE}
 # In this chunk I'm doing a bunch of analysis that I don't want to present 
 # in my slides. But I need the resulting data frame for a plot I want to present.
-    ggplot(gcse2019, mapping = aes(x = School_characteristic, fill = Ethnicity)) +
+    ggplot(national, mapping = aes(x = School_characteristic, fill = Ethnicity)) +
     geom_bar()+
     coord_flip()+
 theme(axis.text.x = element_text(angle = 45, hjust = 1),
@@ -119,7 +121,7 @@ When Asian is filtered, the percentage of Asians who scored more than five was d
 ```{r warning=FALSE, out.width="100%", fig.width=4, echo=FALSE}
 # see how I changed out.width and fig.width from defaults
 # to make the figure bigger
-    gcse2019 %>%
+    national %>%
     filter(Ethnicity == "Asian", Value != "!") %>%
     ggplot(mapping = aes(x = School_characteristic, y = Value)) +
     geom_point() +
